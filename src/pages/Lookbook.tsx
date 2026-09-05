@@ -67,7 +67,7 @@ export default function Lookbook() {
                   key={cat}
                   onClick={() => setFilter(cat)}
                   aria-pressed={filter === cat}
-                  className={`px-4 py-2.5 text-[11px] font-medium tracking-[0.24em] transition-all duration-300 ${
+                  className={`px-4 py-3 text-[11px] font-medium tracking-[0.24em] transition-all duration-300 sm:py-2.5 ${
                     filter === cat
                       ? "bg-volt text-ink"
                       : "border border-white/20 text-muted hover:border-white/60 hover:text-paper"
@@ -171,9 +171,9 @@ export default function Lookbook() {
                     <img
                       src={current.image}
                       alt={current.alt}
-                      className="max-h-[68svh] max-w-full object-contain"
+                      className="max-h-[56svh] max-w-full object-contain sm:max-h-[68svh]"
                     />
-                    <figcaption className="mt-5 flex items-baseline gap-5">
+                    <figcaption className="mt-5 flex flex-wrap items-baseline justify-center gap-x-5 gap-y-1">
                       <span className="font-display text-2xl font-semibold italic text-paper md:text-3xl">
                         {current.title}
                       </span>
@@ -185,7 +185,7 @@ export default function Lookbook() {
                 <button
                   onClick={() => setActive((a) => (a! - 1 + frames.length) % frames.length)}
                   aria-label="Previous frame"
-                  className="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/25 bg-ink/60 text-paper transition-colors hover:bg-volt hover:text-ink md:left-8"
+                  className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/25 bg-ink/60 text-paper transition-colors hover:bg-volt hover:text-ink sm:h-12 sm:w-12 md:left-8"
                 >
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M15 5l-7 7 7 7" strokeLinecap="square" />
@@ -194,7 +194,7 @@ export default function Lookbook() {
                 <button
                   onClick={() => setActive((a) => (a! + 1) % frames.length)}
                   aria-label="Next frame"
-                  className="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/25 bg-ink/60 text-paper transition-colors hover:bg-volt hover:text-ink md:right-8"
+                  className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/25 bg-ink/60 text-paper transition-colors hover:bg-volt hover:text-ink sm:h-12 sm:w-12 md:right-8"
                 >
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M9 5l7 7-7 7" strokeLinecap="square" />

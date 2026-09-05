@@ -125,7 +125,7 @@ export default function Navbar() {
             transition={{ duration: 0.35, ease: EASE_IN_OUT }}
             className="fixed inset-0 z-40 flex flex-col bg-ink lg:hidden"
           >
-            <nav className="flex flex-1 flex-col justify-center gap-2 px-7 pt-20" aria-label="Mobile">
+            <nav className="flex flex-1 flex-col justify-center gap-1 overflow-y-auto px-6 pt-20 sm:gap-2 sm:px-7" aria-label="Mobile">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.to}
@@ -137,7 +137,7 @@ export default function Navbar() {
                     to={link.to}
                     end={link.to === "/"}
                     className={({ isActive }) =>
-                      `group flex items-baseline gap-4 py-2 font-display text-5xl font-semibold leading-tight sm:text-6xl ${
+                      `group flex items-baseline gap-4 py-1.5 font-display text-[2.55rem] font-semibold leading-[1.08] sm:py-2 sm:text-5xl sm:leading-tight ${
                         isActive ? "text-volt italic" : "text-paper"
                       }`
                     }
@@ -165,12 +165,12 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="flex items-center justify-between border-t border-white/10 px-7 py-6"
+              className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-white/10 px-6 py-5 sm:px-7 sm:py-6"
             >
               <a href="mailto:hello@volta.studio" className="text-[11px] tracking-[0.22em] text-muted">
                 HELLO@VOLTA.STUDIO
               </a>
-              <div className="flex gap-5">
+              <div className="flex gap-4 sm:gap-5">
                 {socials.slice(0, 3).map((s) => (
                   <a
                     key={s.label}

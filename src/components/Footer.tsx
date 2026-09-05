@@ -14,7 +14,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-[1600px] gap-12 px-5 pb-14 pt-4 md:grid-cols-12 md:px-8">
+      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 pb-12 pt-4 sm:gap-12 sm:pb-14 md:grid-cols-12 md:px-8">
         <div className="md:col-span-4">
           <p className="font-body text-sm font-semibold tracking-[0.4em]">
             VOLTA<span className="text-volt">.</span>

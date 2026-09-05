@@ -21,7 +21,7 @@ export default function HeroWord({ word }: HeroWordProps) {
           animate={{ y: "0%" }}
           exit={{ y: "-108%" }}
           transition={{ duration: 0.7, ease: EASE_IN_OUT }}
-          className="block font-display text-[clamp(4.2rem,16vw,14rem)] font-semibold italic leading-[0.9] text-volt"
+          className="block font-display text-[clamp(3.3rem,15vw,14rem)] font-semibold italic leading-[0.9] text-volt"
         >
           {word}
           <span className="not-italic">.</span>

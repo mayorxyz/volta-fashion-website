@@ -183,7 +183,7 @@ export default function CollectionDetail() {
 
         {/* --- next story --- */}
         <section className="border-t border-white/10" aria-label="Next collection">
-          <Link to={`/collections/${next.slug}`} className="group grid items-center gap-8 px-5 py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
+          <Link to={`/collections/${next.slug}`} className="group grid items-center gap-8 px-5 py-12 sm:py-16 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
             <div className="md:col-span-7">
               <p className="label-tag text-muted">NEXT STORY — {next.season}</p>
               <p className="mt-5 font-display text-[clamp(2.6rem,7vw,6.5rem)] font-semibold leading-[0.95] text-paper transition-all duration-500 group-hover:translate-x-3 group-hover:text-volt">

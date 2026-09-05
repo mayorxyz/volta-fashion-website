@@ -39,11 +39,11 @@ export default function LookbookGrid() {
               </EditorialImage>
 
               {/* persistent caption */}
-              <span className="mt-3 flex items-baseline justify-between gap-3">
+              <span className="mt-2.5 flex flex-col items-start gap-1 sm:mt-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
                 <span className="font-display text-base font-semibold italic text-paper md:text-lg">
                   {look.title}
                 </span>
-                <span className="label-tag shrink-0 text-[9px] text-muted md:text-[10px]">{look.meta}</span>
+                <span className="label-tag shrink-0 text-[10px] text-muted">{look.meta}</span>
               </span>
             </Link>
           </Reveal>

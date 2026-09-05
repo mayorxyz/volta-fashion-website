@@ -141,7 +141,7 @@ export default function Home() {
             </Link>
           </Reveal>
 
-          <Reveal y={-56} className="flex flex-col justify-center px-5 py-20 md:order-2 md:px-16 md:py-28 lg:px-24">
+          <Reveal y={-56} className="flex flex-col justify-center px-5 py-14 sm:py-20 md:order-2 md:px-16 md:py-28 lg:px-24">
             <p className="label-tag text-muted">(03) — NEW CAPSULE</p>
             <h2 id="teaser-heading" className="mt-6 font-display text-[clamp(2.8rem,6vw,5.4rem)] font-semibold leading-[0.98]">
               FUTURE
@@ -153,7 +153,7 @@ export default function Home() {
               refuse to blend into the background.
             </p>
 
-            <Magnetic className="mt-12">
+            <Magnetic className="mt-10 sm:mt-12">
               <Link
                 to="/collections/future-study"
                 className="group inline-flex items-center gap-4 text-[13px] font-semibold tracking-[0.3em] text-volt"

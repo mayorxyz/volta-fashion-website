@@ -57,7 +57,7 @@ export default function Contact() {
             <MaskReveal lines={["LET'S MAKE", "THE FUTURE."]} />
           </h1>
 
-          <div className="mt-16 grid gap-16 pb-24 md:grid-cols-12 md:gap-12 md:pb-36">
+          <div className="mt-12 grid gap-12 pb-20 sm:mt-16 sm:gap-16 sm:pb-24 md:grid-cols-12 md:gap-12 md:pb-36">
             {/* --- channels --- */}
             <div className="md:col-span-5">
               <Reveal delay={0.1}>
@@ -132,7 +132,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: EASE_OUT }}
-                    className="flex h-full flex-col justify-center border border-white/15 bg-surface/60 p-10 md:p-16"
+                    className="flex h-full flex-col justify-center border border-white/15 bg-surface/60 p-7 sm:p-10 md:p-16"
                     role="status"
                     aria-live="polite"
                   >
@@ -163,7 +163,7 @@ export default function Contact() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
-                    className="border border-white/15 bg-surface/60 p-8 md:p-14"
+                    className="border border-white/15 bg-surface/60 p-6 sm:p-10 md:p-14"
                   >
                     <p className="label-tag text-muted">WRITE TO THE HOUSE</p>
 
@@ -234,7 +234,7 @@ export default function Contact() {
         </div>
 
         {/* --- oversized closing statement --- */}
-        <div className="border-t border-white/10 px-5 py-20 text-center md:py-28">
+        <div className="border-t border-white/10 px-5 py-16 text-center sm:py-20 md:py-28">
           <Reveal>
             <p className="font-display text-[clamp(3rem,11vw,11rem)] font-semibold leading-[0.88]">
               THE FUTURE

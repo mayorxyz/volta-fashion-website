@@ -60,7 +60,7 @@ export default function EditorialHero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/55 via-transparent to-transparent" aria-hidden="true" />
 
       {/* --- headline --- */}
-      <div className="absolute inset-x-0 bottom-0 px-5 pb-24 md:px-8 md:pb-28">
+      <div className="absolute inset-x-0 bottom-0 px-5 pb-[5.5rem] sm:pb-24 md:px-8 md:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 46 }}
           animate={{ opacity: 1, y: 0 }}

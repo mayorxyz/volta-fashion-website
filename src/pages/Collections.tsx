@@ -35,7 +35,7 @@ export default function Collections() {
             </Reveal>
           </div>
 
-          <div className="mt-16 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:gap-x-10">
+          <div className="mt-12 grid gap-x-6 gap-y-10 sm:mt-16 sm:grid-cols-2 sm:gap-y-14 lg:gap-x-10">
             {collections.map((collection, i) => (
               <Reveal key={collection.slug} delay={(i % 2) * 0.12} className={i % 2 === 1 ? "lg:mt-28" : ""}>
                 <CollectionCard collection={collection} />
