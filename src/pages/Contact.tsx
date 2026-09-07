@@ -44,18 +44,20 @@ export default function Contact() {
 
   return (
     <PageTransition>
-      <main id="main" className="bg-ink pb-0 pt-32 text-paper md:pt-44">
+      <main id="main" className="bg-ink pb-0 text-paper">
         <div className="mx-auto max-w-[1600px] px-5 md:px-8">
-          <Reveal>
-            <p className="label-tag flex items-center gap-3 text-muted">
-              <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
-              (CONTACT) — SAY IT LOUD
-            </p>
-          </Reveal>
+          <div className="flex min-h-[calc(100svh-7rem)] flex-col justify-center pt-32 md:pt-40">
+            <Reveal immediate>
+              <p className="label-tag flex items-center gap-3 text-muted">
+                <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
+                (CONTACT) — SAY IT LOUD
+              </p>
+            </Reveal>
 
-          <h1 className="mt-6 font-display text-[clamp(3rem,10vw,9.5rem)] font-semibold leading-[0.92]">
-            <MaskReveal lines={["LET'S MAKE", "THE FUTURE."]} />
-          </h1>
+            <h1 className="mt-6 font-display text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.92]">
+              <MaskReveal lines={["LET'S MAKE", "THE FUTURE."]} immediate />
+            </h1>
+          </div>
 
           <div className="mt-12 grid gap-12 pb-20 sm:mt-16 sm:gap-16 sm:pb-24 md:grid-cols-12 md:gap-12 md:pb-36">
             {/* --- channels --- */}

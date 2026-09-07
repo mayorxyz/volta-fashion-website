@@ -10,32 +10,34 @@ export default function Collections() {
 
   return (
     <PageTransition>
-      <main id="main" className="bg-ink pb-28 pt-32 text-paper md:pt-44">
+      <main id="main" className="bg-ink pb-28 text-paper">
         <div className="mx-auto max-w-[1600px] px-5 md:px-8">
-          <Reveal>
-            <p className="label-tag flex items-center gap-3 text-muted">
-              <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
-              (INDEX) — ALL STORIES
-            </p>
-          </Reveal>
-
-          <h1 className="mt-6 font-display text-[clamp(3.2rem,11vw,10rem)] font-semibold leading-[0.9]">
-            <MaskReveal lines={["COLLEC-", "TIONS"]} />
-          </h1>
-
-          <div className="mt-8 flex flex-wrap items-baseline justify-between gap-4 border-b border-white/10 pb-8">
-            <Reveal delay={0.15}>
-              <p className="max-w-md text-base font-light leading-relaxed text-muted">
-                Every collection is a story with a spine — a single idea cut into cloth. Pick one.
-                Wear it loud.
+          <div className="flex min-h-[calc(100svh-9rem)] flex-col justify-center pt-28 sm:min-h-[calc(100svh-7rem)] md:pt-40">
+            <Reveal>
+              <p className="label-tag flex items-center gap-3 text-muted">
+                <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
+                (INDEX) — ALL STORIES
               </p>
             </Reveal>
-            <Reveal delay={0.25}>
-              <p className="label-tag text-muted">05 STORIES — FW24 → SS26</p>
-            </Reveal>
+
+            <h1 className="mt-5 font-display text-[clamp(2.6rem,13.2vw,10rem)] font-semibold leading-[0.9] sm:mt-6 sm:text-[clamp(4rem,11vw,10rem)]">
+              <MaskReveal lines={["COLLECTIONS"]} immediate />
+            </h1>
+
+            <div className="mt-6 flex flex-col items-start justify-between gap-5 border-b border-white/10 pb-6 sm:mt-8 sm:flex-row sm:items-end sm:gap-4 sm:pb-8 md:mt-12">
+              <Reveal delay={0.15}>
+                <p className="max-w-md text-sm font-light leading-relaxed text-muted sm:text-base">
+                  Every collection is a story with a spine — a single idea cut into cloth. Pick one.
+                  Wear it loud.
+                </p>
+              </Reveal>
+              <Reveal delay={0.25}>
+                <p className="label-tag text-[10px] text-muted sm:text-[11px]">05 STORIES — FW24 → SS26</p>
+              </Reveal>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-x-6 gap-y-10 sm:mt-16 sm:grid-cols-2 sm:gap-y-14 lg:gap-x-10">
+          <div className="mt-8 grid gap-x-6 gap-y-10 sm:mt-16 sm:grid-cols-2 sm:gap-y-14 lg:gap-x-10">
             {collections.map((collection, i) => (
               <Reveal key={collection.slug} delay={(i % 2) * 0.12} className={i % 2 === 1 ? "lg:mt-28" : ""}>
                 <CollectionCard collection={collection} />

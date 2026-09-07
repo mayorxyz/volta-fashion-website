@@ -31,7 +31,13 @@ export default function Marquee({
 
   return (
     <div className={`overflow-hidden ${className}`}>
-      <div className="animate-marquee flex w-max" style={{ animationDuration: `${duration}s` }}>
+      <div
+        className="animate-marquee flex w-max"
+        style={{
+          animation: `marquee-x ${duration}s linear infinite`,
+          willChange: "transform",
+        }}
+      >
         <Row />
         <Row hidden />
       </div>

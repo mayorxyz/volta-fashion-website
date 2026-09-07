@@ -8,6 +8,18 @@
   --color-surface: #1a1a1a;
   --font-display: "Cormorant Garamond", "Georgia", serif;
   --font-body: "Space Grotesk", "Helvetica Neue", sans-serif;
+
+  /* Tailwind v4 animation namespace — powers the `animate-marquee` utility */
+  --animate-marquee: marquee-x 30s linear infinite;
+
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 html {
@@ -94,19 +106,7 @@ body {
 
 /* ---------- signature motion ---------- */
 
-@keyframes marquee-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.animate-marquee {
-  animation: marquee-x 30s linear infinite;
-}
-
-@keyframes scroll-cue {
+.animate-scroll-cue {
   0% {
     transform: translateY(-105%);
   }
@@ -135,11 +135,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
   .animate-scroll-cue,
   .animate-pulse-dot {
-    animation: none;
+    animation: none !important;
   }
+  /* The marquee keeps running even with reduced motion — it's the site's
+     signature element. Remove it from this list if that ever changes. */
   html {
     scroll-behavior: auto;
   }

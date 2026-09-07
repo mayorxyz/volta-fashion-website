@@ -40,42 +40,46 @@ export default function Lookbook() {
 
   return (
     <PageTransition>
-      <main id="main" className="bg-ink pb-28 pt-32 text-paper md:pt-44">
+      <main id="main" className="bg-ink pb-28 text-paper">
         <div className="mx-auto max-w-[1600px] px-5 md:px-8">
-          <Reveal>
-            <p className="label-tag flex items-center gap-3 text-muted">
-              <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
-              (ARCHIVE) — VISUAL DIARY
-            </p>
-          </Reveal>
-
-          <h1 className="mt-6 font-display text-[clamp(3.2rem,11vw,10rem)] font-semibold leading-[0.9]">
-            <MaskReveal lines={["LOOK-", "BOOK"]} />
-          </h1>
-
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-6 border-b border-white/10 pb-8">
-            <Reveal delay={0.15}>
-              <p className="max-w-md text-base font-light leading-relaxed text-muted">
-                Frames that didn't make the campaign — and a few that made it everywhere. Click any
-                frame to view it full bleed.
+          <div className="flex min-h-[calc(100svh-7rem)] flex-col justify-center pt-32 md:pt-40">
+            <Reveal immediate>
+              <p className="label-tag flex items-center gap-3 text-muted">
+                <span className="inline-block h-2 w-2 bg-volt" aria-hidden="true" />
+                (ARCHIVE) — VISUAL DIARY
               </p>
             </Reveal>
 
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter frames">
-              {lookCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  aria-pressed={filter === cat}
-                  className={`px-4 py-3 text-[11px] font-medium tracking-[0.24em] transition-all duration-300 sm:py-2.5 ${
-                    filter === cat
-                      ? "bg-volt text-ink"
-                      : "border border-white/20 text-muted hover:border-white/60 hover:text-paper"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            <h1 className="mt-6 font-display text-[clamp(4rem,14vw,13rem)] font-semibold leading-[0.9]">
+              <MaskReveal lines={["LOOK BOOK"]} immediate />
+            </h1>
+
+            <div className="mt-8 flex flex-wrap items-end justify-between gap-6 border-b border-white/10 pb-8 md:mt-12">
+              <Reveal delay={0.15} immediate>
+                <p className="max-w-md text-base font-light leading-relaxed text-muted">
+                  Frames that didn't make the campaign — and a few that made it everywhere. Click any
+                  frame to view it full bleed.
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.25} immediate>
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Filter frames">
+                  {lookCategories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setFilter(cat)}
+                      aria-pressed={filter === cat}
+                      className={`px-4 py-3 text-[11px] font-medium tracking-[0.24em] transition-all duration-300 sm:py-2.5 ${
+                        filter === cat
+                          ? "bg-volt text-ink"
+                          : "border border-white/20 text-muted hover:border-white/60 hover:text-paper"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </Reveal>
             </div>
           </div>
 

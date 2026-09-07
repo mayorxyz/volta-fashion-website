@@ -7,16 +7,20 @@ interface RevealProps {
   className?: string;
   delay?: number;
   y?: number;
+  /** Animate immediately on mount instead of waiting for the viewport. */
+  immediate?: boolean;
 }
 
-/** Viewport-triggered fade + translate reveal. Transform-only, GPU friendly. */
-export default function Reveal({ children, className, delay = 0, y = 40 }: RevealProps) {
+/** Viewport-triggered fade + translate reveal. Transform-only, GPU friendly.
+ *  Pass `immediate` to animate on mount instead of waiting for the viewport. */
+export default function Reveal({ children, className, delay = 0, y = 40, immediate = false }: RevealProps) {
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+      {...(immediate
+        ? { animate: { opacity: 1, y: 0 } }
+        : { whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-10% 0px -10% 0px" } })}
       transition={{ duration: 0.9, ease: EASE_OUT, delay }}
     >
       {children}
@@ -29,10 +33,12 @@ interface MaskRevealProps {
   className?: string;
   lineClassName?: string;
   delay?: number;
+  /** Animate immediately on mount instead of waiting for the viewport. */
+  immediate?: boolean;
 }
 
 /** Line-mask reveal — each line slides out of an overflow-hidden clip. */
-export function MaskReveal({ lines, className, lineClassName, delay = 0 }: MaskRevealProps) {
+export function MaskReveal({ lines, className, lineClassName, delay = 0, immediate = false }: MaskRevealProps) {
   return (
     <span className={className}>
       {lines.map((line, i) => (
@@ -40,8 +46,9 @@ export function MaskReveal({ lines, className, lineClassName, delay = 0 }: MaskR
           <motion.span
             className={"block " + (lineClassName ?? "")}
             initial={{ y: "112%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, margin: "-12% 0px" }}
+            {...(immediate
+              ? { animate: { y: "0%" } }
+              : { whileInView: { y: "0%" }, viewport: { once: true, margin: "-12% 0px" } })}
             transition={{ duration: 0.95, ease: EASE_OUT, delay: delay + i * 0.12 }}
           >
             {line}
